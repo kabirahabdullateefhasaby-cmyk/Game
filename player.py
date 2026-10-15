@@ -1,4 +1,6 @@
 import random
+player_score: int = 0
+computer_score: int = 0
 
 choices = ["rock","paper","scissors"]
 computer = random.choice(choices)
@@ -27,10 +29,12 @@ while True:
     if player == computer:
         print("it a tie")
     elif (player == "rock" and computer == "scissors") or (player == "paper" and computer == "rock") or (player == "scissors" and computer == "paper"):
-        print("computer win!")
-    else:
+        player_score += 1
         print("you win!")
-
+    else:
+        computer_score += 1
+        print("computer win!")
+    print(f"your score is {player_score} and computer'score is {computer_score}")
         
 
    
